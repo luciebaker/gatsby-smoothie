@@ -1,7 +1,38 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const path = require ('path')
+exports.createPages = ({ graphql, actions }) => {
+    const {createPage} = actions
+    const smoothieTemplate = path.resolve('src/templates/smoothieTemplate.js')
 
-// You can delete this file if you're not using it
+    return graphql(`
+    {
+        allSmoothie {
+            edges {
+                node {
+                id
+                title
+                description
+                instructions
+                creator {
+                    name
+                }
+                localImage {
+                    publicURL
+                    }
+                }
+            }
+        }
+    }
+    `).then((result) => {
+        if(result.errors){
+            throw result.errors
+        }
+
+        result.data.allSmoothie.edges.forEach(smoothie => {
+            createPage ({
+                path: `/smoothie/${smoothie.node.id}`,
+                component: smoothieTemplate,
+                context: smoothie.node
+            })
+        })
+    })
+}
