@@ -9,15 +9,6 @@ exports.createPages = ({ graphql, actions }) => {
             edges {
                 node {
                 id
-                title
-                description
-                instructions
-                creator {
-                    name
-                }
-                localImage {
-                    publicURL
-                    }
                 }
             }
         }
@@ -31,7 +22,7 @@ exports.createPages = ({ graphql, actions }) => {
             createPage ({
                 path: `/smoothie/${smoothie.node.id}`,
                 component: smoothieTemplate,
-                context: smoothie.node
+                context: {smoothieId: smoothie.node.id}
             })
         })
     })
