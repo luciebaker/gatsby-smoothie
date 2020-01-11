@@ -29,7 +29,7 @@ const SmoothieContent = ({smoothieTitle, smoothieImage, smoothieCreator, smoothi
     return (
         <SmoothieContentWrapper>
         <SmoothieContentImageWrapper>
-        <img src={smoothieImage} alt="my smoothie" />
+        <img src={smoothieImage} alt="my smoothie"/>
         </SmoothieContentImageWrapper>
         <SmoothieContentDetailsWrapper>
         <h2>{smoothieTitle}</h2>

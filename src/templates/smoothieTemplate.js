@@ -1,20 +1,20 @@
-import React from 'react'
-import Layout from "../components/layout"
+import React, { useContext } from 'react'
 import { graphql } from 'gatsby'
-
+import { FirebaseContext } from '../components/Firebase'
 import SmoothieContent from "../components/smoothieContent"
 
 
 const smoothieTemplate = (props) => {
+
     return (
-        <Layout>
+        <section>
         <SmoothieContent 
         smoothieImage ={props.data.smoothie.localImage.publicURL}
         smoothieTitle={props.data.smoothie.title} 
         smoothieCreator={props.data.smoothie.creator.name}
         smoothieDescription={props.data.smoothie.description}
         smoothieInstructions={props.data.smoothie.instructions} />
-        </Layout>
+        </section>
     )
 }
 
@@ -25,7 +25,7 @@ export const query = graphql`
             title
             localImage {
                 publicURL
-                }
+            }
             description
             instructions
             creator {

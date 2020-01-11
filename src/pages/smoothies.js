@@ -1,11 +1,10 @@
 import React from 'react'
-import Layout from "../components/layout"
 import { Link, graphql } from 'gatsby'
 import SmoothieContent from "../components/smoothieContent"
 
 const smoothies = (props) => {
     return (
-        <Layout>
+        <section>
         {props.data.allSmoothie.edges.map(edge => (
             <SmoothieContent 
             smoothieImage = {edge.node.localImage.publicURL}
@@ -18,7 +17,7 @@ const smoothies = (props) => {
             Join the conversation</Link>
             </SmoothieContent>
         ))}
-        </Layout>
+        </section>
     )
 }
 
@@ -30,8 +29,8 @@ allSmoothie {
             id
             title
             localImage {
-               publicURL
-                }
+                publicURL
+            }
             description
             instructions
             creator {
