@@ -1,19 +1,19 @@
 import React, { useContext } from 'react'
 import { graphql } from 'gatsby'
 import { FirebaseContext } from '../components/Firebase'
-import SmoothieContent from "../components/smoothieContent"
+import SmoothieContentSingle from "../components/smoothieSingle"
 
 
 const smoothieTemplate = (props) => {
 
     return (
         <section>
-        <SmoothieContent 
-        smoothieImage ={props.data.smoothie.localImage.publicURL}
-        smoothieTitle={props.data.smoothie.title} 
-        smoothieCreator={props.data.smoothie.creator.name}
-        smoothieDescription={props.data.smoothie.description}
-        smoothieInstructions={props.data.smoothie.instructions} />
+        <SmoothieContentSingle 
+        smoothieImageSingle ={props.data.smoothie.localImage.publicURL}
+        smoothieTitleSingle={props.data.smoothie.title} 
+        smoothieCreatorSingle={props.data.smoothie.creator.name}
+        smoothieDescriptionSingle={props.data.smoothie.description}
+        smoothieInstructionsSingle={props.data.smoothie.instructions} />
         </section>
     )
 }

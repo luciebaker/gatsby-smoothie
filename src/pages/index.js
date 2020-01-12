@@ -5,6 +5,7 @@ import HomepageHero from '../components/homepage-components/HomepageHero'
 import HomepageBanner from '../components/homepage-components/HomepageBanner'
 import { HomepageButton } from '../components/homepage-components/HomepageButton'
 import { graphql } from 'gatsby'
+import HomepageInfo from '../components/homepage-components/HomepageInfo'
 import { database } from "firebase"
 
 export default ({data}) => (
@@ -17,6 +18,7 @@ export default ({data}) => (
     </AniLink>
     </HomepageBanner>
     </HomepageHero>
+    <HomepageInfo />
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>

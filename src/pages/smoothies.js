@@ -2,6 +2,7 @@ import React from 'react'
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import { graphql } from 'gatsby'
 import SmoothieContent from "../components/smoothieContent"
+import { HomepageButton } from '../components/homepage-components/HomepageButton'
 
 const smoothies = (props) => {
     return (
@@ -14,8 +15,9 @@ const smoothies = (props) => {
             smoothieDescription = {edge.node.description}
             smoothieInstructions = {edge.node.instructions}
             key = {edge.node.id}>
-            <AniLink fade to ={`/smoothie/${edge.node.id}`}>
-            Join the conversation</AniLink>
+            <AniLink fade to={`/smoothie/${edge.node.id}`}>
+            <HomepageButton>Join The Conversation</HomepageButton>
+            </AniLink>
             </SmoothieContent>
         ))}
         </section>
