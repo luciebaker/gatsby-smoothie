@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react"
 import {Form, Input, Button, ErrorMessage} from '../components/form-components';
 import {FirebaseContext} from '../components/Firebase';
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const Register = () => {
     const {firebase} = useContext(FirebaseContext);
@@ -59,6 +60,9 @@ return (
     <Button type="submit" block>
         Register
     </Button>
+    <div>
+    <p>Already registered? <AniLink fade to='/login'>Go to Login Page.</AniLink></p>
+    </div>
     </Form>
 )
 }

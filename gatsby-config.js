@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Smooth`,
+    description: `Join the Smoothie Community.`,
+    author: `Lucie B`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -16,6 +16,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-transition-link`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -25,7 +26,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/smoothie-icon.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -50,6 +51,20 @@ module.exports = {
             map: doc => ({
               name: doc.name,
             }),
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Henny Penny`,
+          },
+          {
+            family: `Montserrat`,
+            variants: [`400`, `500`, `600`, `700`]
           },
         ],
       },

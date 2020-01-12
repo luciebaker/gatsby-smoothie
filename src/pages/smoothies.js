@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import AniLink from "gatsby-plugin-transition-link/AniLink";
+import { graphql } from 'gatsby'
 import SmoothieContent from "../components/smoothieContent"
 
 const smoothies = (props) => {
@@ -13,8 +14,8 @@ const smoothies = (props) => {
             smoothieDescription = {edge.node.description}
             smoothieInstructions = {edge.node.instructions}
             key = {edge.node.id}>
-            <Link to ={`/smoothie/${edge.node.id}`}>
-            Join the conversation</Link>
+            <AniLink fade to ={`/smoothie/${edge.node.id}`}>
+            Join the conversation</AniLink>
             </SmoothieContent>
         ))}
         </section>

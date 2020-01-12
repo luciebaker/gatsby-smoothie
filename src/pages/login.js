@@ -1,6 +1,7 @@
 import React, {useState, useContext, useEffect} from "react"
 import {FirebaseContext} from '../components/Firebase'
 import {Form, Input, Button, ErrorMessage} from '../components/form-components'
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 const Login = () => {
 
@@ -33,6 +34,9 @@ const Login = () => {
             <ErrorMessage>{errorMessage}</ErrorMessage>
             }
             <Button type="submit" block>Login</Button>
+            <div>
+            <p>Not a member yet? <AniLink fade to='/register'>Go to Registration Page.</AniLink></p>
+            </div>
             </Form>
         </section>
     )
