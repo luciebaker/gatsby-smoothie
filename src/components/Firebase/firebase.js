@@ -24,6 +24,13 @@ class Firebase {
     })
   }
 
+  subscribeToSmoothieComments({smoothieId, onSnapshot}){
+    const smoothieRef = this.db.collection('smoothie').doc(smoothieId);
+    return this.db.collection('comments')
+    .where('smoothie', '==', smoothieRef)
+    .onSnapshot(onSnapshot)
+  }
+
   async login({email, password}) {
     return this.auth.signInWithEmailAndPassword(email, password);
   }
